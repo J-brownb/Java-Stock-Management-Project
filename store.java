@@ -65,10 +65,12 @@ public class store
 				break;
 			}
 			if (userinput == 1)	{
+				WriteItemsTxt.newItem(); 
 				System.out.print("\n New Item Added");	
 				break;
 			}
 			else if (userinput == 2) {		
+				
 				System.out.print("\n Item quantity updated");
 				break;
 			}
