@@ -1,3 +1,4 @@
+package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -7,11 +8,7 @@ import java.util.List;
 import java.util.Scanner; 
 import java.io.IOException;
 public class UpdateQty {
-	public static void main(String[] args) throws IOException {
-
-	
-
-//make array list with the lines of text in the items.txt doc 
+public static void main(String[] args) throws IOException {
 		
 //scan the items.txt file 
 	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
@@ -23,7 +20,6 @@ public class UpdateQty {
 	}
 	s.close();
 	
-		
 //print the items that are currently within the array list called 'string'
 	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n");
 
@@ -37,8 +33,6 @@ public class UpdateQty {
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
-	
-	
 	
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");

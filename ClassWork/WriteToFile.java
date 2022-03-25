@@ -2,14 +2,14 @@ package uk.ac.uos.i2p.s223358;
 
 import java.io.FileWriter;
 import java.io.IOException;
-public class WriteTransactionsTxt {
+public class WriteToFile {
 public static void main(String[] args) {
 
 	try { 
 	
 //myWriter is a constructor 
-FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\Uni\\Introduction To Programming\\Assignment\\I2P-Assignment-starter-code\\transactions.txt", true);
-myWriter.write("hello " + System.getProperty( "line.separator" ));
+FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\Holly.doc");
+myWriter.write("hello");
 myWriter.close();
 System.out.println("Success");
 	} catch (IOException e) {
@@ -18,4 +18,3 @@ e.printStackTrace();
 }
 	}
 }
-

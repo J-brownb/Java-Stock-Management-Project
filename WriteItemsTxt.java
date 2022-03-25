@@ -1,3 +1,6 @@
+package uk.ac.uos.i2p.s223358;
+
+
 import java.io.FileWriter;
 import java.util.Scanner; // program uses class Scanner
 import java.io.IOException;

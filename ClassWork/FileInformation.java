@@ -1,10 +1,9 @@
 package uk.ac.uos.i2p.s223358;
 
-
 import java.io.File;
 import java.io.IOException;
 
-public class ShowFileInfo {
+public class FileInformation {
 public static void main(String[] args) {
 
 File myObj = new File ("C:\\Users\\Jonny\\OneDrive\\Desktop\\Jack.doc");
