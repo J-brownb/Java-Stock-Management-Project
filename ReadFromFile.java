@@ -14,7 +14,7 @@ System.out.println(data);
 
 myReader.close();
 } catch (FileNotFoundException e) {
-	System.out.println("An Error Occured.");
+	System.out.println("An Error Occured!");
 e.printStackTrace();
 }
 }
