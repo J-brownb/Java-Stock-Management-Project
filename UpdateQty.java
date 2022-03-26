@@ -60,6 +60,16 @@ public static void main(String[] args) throws IOException {
 	System.out.println("New item details " + productdetail);
 
 //replace current item qty with new item qty 
+	
+	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
+	
+	for (int i=1; i<list.size(); i++) {
+		  String curr1 = list.get(i);
+		  System.out.println(i + ". " + curr1);
+		}
+
+	
+}}
 
 
 
@@ -87,7 +97,6 @@ public static void main(String[] args) throws IOException {
 
 	
 	
-	}}
 
 	
 	//1.isolating the Item we want to edit by making it into a new array list
