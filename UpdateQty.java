@@ -62,6 +62,18 @@ public static void main(String[] args) throws IOException {
 	
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
 
+	//add headings to items, before for loop
+
+	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt");
+	for (int i=1; i<list.size(); i++) {
+		  curr = list.get(i);
+		  myWriter.write(curr + System.getProperty( "line.separator" ));
+		}
+	myWriter.close();
+
+
+
+	
 }}
 			//myWriter is a constructor 
  
@@ -69,6 +81,7 @@ public static void main(String[] args) throws IOException {
 //	  for (int i=1; i<list.size(); i++) {
 //		  String curr2 = list.get(i);
 //		  myWriter.write(curr2);
+//		  
 //	  myWriter.close();
 //	  
 //	  
