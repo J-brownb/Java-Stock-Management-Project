@@ -69,7 +69,6 @@ public static void main(String[] args) throws IOException {
 //	  for (int i=1; i<list.size(); i++) {
 //		  String curr2 = list.get(i);
 //		  myWriter.write(curr2);
-//		  
 //	  myWriter.close();
 //	  
 //	  
