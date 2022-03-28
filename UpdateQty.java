@@ -31,7 +31,8 @@ public static void main(String[] args) throws IOException {
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
-	
+	s.close();
+
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");
 
@@ -55,12 +56,18 @@ public static void main(String[] args) throws IOException {
 	int newqty = input.nextInt(); 
 	String productstrng = String.valueOf(newqty);
     productdetail.set(3, productstrng);
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and the records updated!");
+	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and the records have been updated!");
 
 
 //replace current item qty with new item qty 
 	
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
+		
+	for (int i=1; i<list.size(); i++) {
+		  curr = list.get(i);
+		  System.out.println(i + ". " + curr);
+		}
+		  
 	
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
@@ -73,5 +80,10 @@ public static void main(String[] args) throws IOException {
 	//WORKS BUT THERE ARE SPACES IN THE EDITED ARRAY LIST ITEM
 
 
+	
+}
+
+private static void replaceAll(String string, String string2) {
+	// TODO Auto-generated method stub
 	
 }}
