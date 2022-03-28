@@ -4,7 +4,7 @@ package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
-public class ReadFromFile {
+public class PrintTransactionsReport {
 public static void main(String[] args) {
 
 	try { 

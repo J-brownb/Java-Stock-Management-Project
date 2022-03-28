@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner; 
 import java.io.IOException;
 public class UpdateQty {
-public static void newItem(String[] args) throws IOException {
+public static void update(String[] args) throws IOException {
 	
 	
 //scan the items.txt file 

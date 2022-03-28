@@ -67,16 +67,17 @@ public class store
 			}
 			if (userinput == 1)	{
 				WriteItemsTxt.newItem(); 
-				System.out.print("\n New Item Added");	
+				System.out.print("\n New Item Added, Your Items.Txt and Transactions.Txt files have been updated");	
 				break;
 			}
 			else if (userinput == 2) {		
-				UpdateQty.newItem(args); 
+				UpdateQty.update(args); 
 				System.out.print("\n Item quantity updated");
 				break;
 			}
 			else if (userinput == 3) {
 				System.out.print("\n Item Removed");
+				RemoveItem.deleteItem(args); 
 				break;
 			}	
 			else if (userinput == 4) {

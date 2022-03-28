@@ -1,6 +1,4 @@
 package uk.ac.uos.i2p.s223358;
-
-
 import java.io.FileWriter;
 import java.util.Scanner; // program uses class Scanner
 import java.io.IOException;
@@ -40,7 +38,6 @@ myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "
 myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
 myWriter2.close();
 myWriter.close();
-System.out.println("Success");
 	} catch (IOException e) {
 	System.out.println("Error");
 e.printStackTrace();
