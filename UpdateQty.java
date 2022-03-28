@@ -11,7 +11,7 @@ public static void newItem(String[] args) throws IOException {
 	
 	
 //scan the items.txt file 
-	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
+	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt"));
 //create an array list with each new line of the items.txt file 
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){

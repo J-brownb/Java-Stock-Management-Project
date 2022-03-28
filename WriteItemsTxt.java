@@ -11,6 +11,8 @@ public static void newItem() {
 	
 //myWriter is a constructor 
 FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt", true);
+FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
+
 
 //Taking the ID
 Scanner input = new Scanner(System.in);
@@ -34,17 +36,17 @@ int qtyInStock = input.nextInt();
 double totalPrice = qtyInStock * unitPrice;
 System.out.print("Total Price Is: " + totalPrice + "\n"); 
 
-
 myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter2.close();
 myWriter.close();
 System.out.println("Success");
 	} catch (IOException e) {
 	System.out.println("Error");
 e.printStackTrace();
-}
-	}
 
-	
-}
+}}}
+
+
 
 
