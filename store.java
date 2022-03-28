@@ -40,7 +40,7 @@ import java.util.Scanner;
 
 public class store
 {
-	public static void main(String args[])
+	public static void main(String args[]) throws IOException
 	{
 
 		Scanner input = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class store
 				break;
 			}
 			else if (userinput == 2) {		
-				
+				UpdateQty.newItem(args); 
 				System.out.print("\n Item quantity updated");
 				break;
 			}
