@@ -7,8 +7,9 @@ import java.util.List;
 import java.util.Scanner; 
 import java.io.IOException;
 public class UpdateQty {
-public static void main(String[] args) throws IOException {
-		
+public static void newItem(String[] args) throws IOException {
+	
+	
 //scan the items.txt file 
 	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
 //create an array list with each new line of the items.txt file 
@@ -31,8 +32,9 @@ public static void main(String[] args) throws IOException {
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
-	s.close();
 
+	
+	
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");
 
@@ -76,14 +78,8 @@ public static void main(String[] args) throws IOException {
 		  myWriter.write(curr + System.getProperty( "line.separator" ));
 		}
 	myWriter.close();
+	
+}}
 
 	//WORKS BUT THERE ARE SPACES IN THE EDITED ARRAY LIST ITEM
 
-
-	
-}
-
-private static void replaceAll(String string, String string2) {
-	// TODO Auto-generated method stub
-	
-}}
