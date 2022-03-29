@@ -16,7 +16,6 @@ public static void searchItem(String[] args) throws IOException {
 	while (s.hasNextLine()){
 	    list.add(s.nextLine());
 	}
-	s.close(); 
     
     
 	System.out.print("Enter Product Description. Example Format 'item1':");
@@ -25,21 +24,42 @@ public static void searchItem(String[] args) throws IOException {
 	
 	if (Desc.length() < 4) {
         System.out.println("\n Sorry, your search term is too broad, use at least 4 characters of text");
-
+    	System.out.print("Enter Product Description. Example Format 'item1':");
+    	in = new Scanner(System.in);
+    	Desc = in.nextLine();
 	} else {
-
+	
+		if (list.contains(Desc)) {
+	    	System.out.print("Found:");
+			} else {
+		    	System.out.print("Not Found:");
+			}
 	
 	
+	}}}
+		
+//	String curr = list.get(Desc);
 
-    for (String item : list){
-        if (item.contains(Desc)){
-              System.out.println("\n" + "Success! We have found " + Desc + " within your Items.txt file \n");
-              System.out.println("Here are the item details: " + item);
-        } else {
-            System.out.println("\n Item " + Desc + " was not found" );
-            break;
-        }
-     }
-  }
-}
-}
+
+        
+//       if (list.contains(Desc)) {
+//        System.out.println("\n" + "Success! We have found " + Desc + " within your Items.txt file \n");
+//	} else {
+//            System.out.println("The list does not contains it");
+//        
+//	}}}
+//        
+
+
+//    for (String item : list){
+//        if (item.contains(Desc)){
+//              System.out.println("\n" + "Success! We have found " + Desc + " within your Items.txt file \n");
+//              System.out.println("Here are the item details: " + item);
+//        } else {
+//            System.out.println("\n Item " + Desc + " was not found" );
+//            break;
+//        }
+//     }
+//  }
+//}
+//}
