@@ -33,6 +33,7 @@ int qtyInStock = input.nextInt();
 double totalPrice = qtyInStock * unitPrice;
 System.out.print("Total Price Is: " + totalPrice + "\n"); 
 
+//Writing to the items.txt file and the transactions.txt file
 myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
 myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
 myWriter2.close();
