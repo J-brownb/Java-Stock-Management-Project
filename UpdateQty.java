@@ -18,9 +18,8 @@ public static void update(String[] args) throws IOException {
 	}
 	s.close();
 	
-//print the items that are currently within the array list called 'string'
+//print the items that are currently within the array list called 'string' using a for loop
 	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n");
-
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
 	for (int i=1; i<list.size(); i++) {
 		  String curr = list.get(i);
@@ -31,8 +30,6 @@ public static void update(String[] args) throws IOException {
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
-
-	
 	
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");
@@ -48,28 +45,22 @@ public static void update(String[] args) throws IOException {
 	ArrayList<String> productdetail = new ArrayList<String>(productdetailsarray);
 	
 //print item name (at pos 0), and current stock levels (at pos 3)
-	
     System.out.println("Item name: " + productdetail.get(0));
     System.out.println("Amount currently in stock: " + productdetail.get(3));
 
-//ask for new stock qty 
+//ask for new stock qty, save new qty inputted by user as new variable (new qty) 
 	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (Item) + ":"+ "\n");
 	int newqty = input.nextInt(); 
+//setting up new string called productstrng based on newqty variable, set qty in arraylist to match this
 	String productstrng = String.valueOf(newqty);
     productdetail.set(3, productstrng);
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and the records have been updated!");
+	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and the records have been updated! \n");
 
-
-//replace current item qty with new item qty 
 	
+	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
-		
-	for (int i=1; i<list.size(); i++) {
-		  curr = list.get(i);
-		  System.out.println(i + ". " + curr);
-		}
 		  
-	
+	//write over items.txt file with new info, use for loop to loop through each line of array list
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {
