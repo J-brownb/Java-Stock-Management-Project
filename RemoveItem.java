@@ -30,14 +30,13 @@ public class RemoveItem {
 	System.out.print("\n" + "Choose Which Item You Want To Remove (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
 
-	
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Remove Item Number " + (Item) + "\n" + "\n");
 
-//declare string curr as the item that the user selected (full row of details)
-	//String curr = list.get(Item);
+//remove 'item' from the arraylist 'list'
 	list.remove(Item);
 	
+//write the updated ArrayList to the items.txt file using a for loop
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {

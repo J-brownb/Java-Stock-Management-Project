@@ -8,5 +8,4 @@ id,description,unitPrice,qtyInStock,totalPrice
 00007,item7,3000.0,15,45000.0
 00008,item8,2500.0,100,250000.01,hello,1.0,2,2.0
 999,text,1.0,1,1.0
-1,test,100.0,5,500.0
 11111,hello,99.0,2,198.0
