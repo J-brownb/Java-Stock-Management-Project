@@ -1,4 +1,3 @@
-package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ public class RemoveItem {
 	
 	
 //scan the items.txt file 
-	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt"));
+	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
 //create an array list with each new line of the items.txt file 
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){
@@ -39,7 +38,7 @@ public class RemoveItem {
 	//String curr = list.get(Item);
 	list.remove(Item);
 	
-	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt");
+	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {
 		  String curr = list.get(i);
