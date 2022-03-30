@@ -1,3 +1,1 @@
-id,description,qtySold,amount,StockRemaining,transactionType
-FUCK00003,item3,295,3540000.0,50,Updated
-00005,item5,2,10000.0,10,Updated
+id,description,qtySold,stockRemaining,transactionType

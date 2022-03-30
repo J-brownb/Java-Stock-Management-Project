@@ -39,12 +39,12 @@ if (myObj2.createNewFile()) {
 	System.out.println("Exiting.. A Daily Transactions Report Can Be Found On Your Desktop");
 	System.out.println(list);
 
-//
-//	//wiping the transactions.txt report so it can be used for the next program run
-//	FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt");
-//	myWriter2.write("" + System.getProperty( "line.separator" ));
-//	myWriter2.close();
-//	System.out.println("Exiting.. Your Transactions.txt File Has Now Been Wiped");
+
+	//wiping the transactions.txt report so it can be used for the next program run
+	FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt");
+	myWriter2.write("" + System.getProperty( "line.separator" ));
+	myWriter2.close();
+	System.out.println("Exiting.. Your Transactions.txt File Has Now Been Wiped");
 
 	//if the file already exists, user is notified, therefore file wont be overwritten or deleted 
 } else {
