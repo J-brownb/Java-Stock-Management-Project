@@ -15,7 +15,7 @@ public static void exitSequence(String[] args) throws IOException {
 		    list.add(s.nextLine());
 		}
 		s.close();
-		
+		//uses for loop to ensure that all lines of the file are captured
 		for (int i=1; i<list.size(); i++) {
 			  String curr = list.get(i);
 
@@ -29,6 +29,7 @@ if (myObj2.createNewFile()) {
 	//writing the data from the transactions.txt report to the file 
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\DailyTransactionReport.txt");
 	myWriter.write("id,description,qtySold,amount,StockRemaining,transactionType"+ System.getProperty( "line.separator" ));
+	//uses for loop to ensure that all lines of the file are written 
 	for (i=1; i<list.size(); i++) {
 		  curr = list.get(i);
 		  myWriter.write(curr + System.getProperty( "line.separator" ));
@@ -42,7 +43,7 @@ if (myObj2.createNewFile()) {
 
 	//wiping the transactions.txt report so it can be used for the next program run
 	FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt");
-	myWriter2.write("" + System.getProperty( "line.separator" ));
+	myWriter2.write("id,description,qtySold,stockRemaining,transactionType" + System.getProperty( "line.separator" ));
 	myWriter2.close();
 	System.out.println("Exiting.. Your Transactions.txt File Has Now Been Wiped");
 
