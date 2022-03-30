@@ -1,7 +1,8 @@
 id,description, 
 00002,bb,12,276000.0,33
 00010,skdflkjsdlfs,3,60.0,7
-00002,item2,0,0,50,Updated
-00004,item4,7,70000.0,33,Updated
-00006,item6,0,0,25,Updated
-00008,item8,50,125000.0,50,Updated
+
+00002, item2, 0, 0, 33, Removed
+00004, item4, 0, 0, 40, Removed
+00005, item5, 0, 0, 12, Removed
+00006, item6, 0, 0, 20, Removed
