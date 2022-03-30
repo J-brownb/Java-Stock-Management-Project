@@ -58,7 +58,7 @@ public class store
 		int userinput = input.nextInt();
 			
 
-		while(userinput !=6)
+		while(userinput !=7)
 		{
 			if (userinput>6 || userinput<1) {
 				System.out.println("This doesn't appear to be a valid option...!");
@@ -76,7 +76,6 @@ public class store
 			}
 			else if (userinput == 3) {
 				RemoveItem.deleteItem(args); 
-				System.out.print("\n Item Removed, your Items.txt file has been updated");
 				break;
 			}	
 			else if (userinput == 4) {
@@ -89,10 +88,16 @@ public class store
 			Search.searchItem(args); 
 			System.out.print("\n Seach Completed");	
 			break;
+			
+			}	
+
+			else if (userinput == 6) {
+				Exit.exitSequence(args); 
+				System.out.println("\n\n Bye Bye, thanks for using this program...!");
+			break;
 		}	
 			
 		}
 		
-	System.out.println("\n\n Thanks for using this program...!");
 	}
 }

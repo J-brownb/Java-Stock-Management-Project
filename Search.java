@@ -1,65 +1,100 @@
-import java.io.File;
-import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner; 
-import java.io.IOException;
-public class Search {
-public static void searchItem(String[] args) throws IOException {
-	
-	
-//scan the items.txt file 
-	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items2.txt"));
-//create an array list with each new line of the items.txt file 
-	ArrayList<String> list = new ArrayList<String>();
-	while (s.hasNextLine()){
-	    list.add(s.nextLine());
-	}
-    
-    
-	System.out.print("Enter Product Description. Example Format 'item1':");
-	Scanner in = new Scanner(System.in);
-	String Desc = in.nextLine();
-	
-	if (Desc.length() < 4) {
-        System.out.println("\n Sorry, your search term is too broad, use at least 4 characters of text");
-    	System.out.print("Enter Product Description. Example Format 'item1':");
-    	in = new Scanner(System.in);
-    	Desc = in.nextLine();
-	} else {
-	
-		if (list.contains(Desc)) {
-	    	System.out.print("Found:");
-			} else {
-		    	System.out.print("Not Found:");
-			}
-	
-	
-	}}}
+/* UNIVERSITY OF SUFFOLK - INTRODUCTION TO PROGRAMMING 
+ * Module assignment
+ * 
+ * Module Lead: Dr. Kakia Chatsiou
+ * Last updated 2022-02-25
+ * 
+ * The assignment starter code consists of 3 files:
+ * 
+ * a) store.java: this file contains starting code for the inventory
+ * management control system. See assignment brief document for 
+ * more information on how to build the rest of the application.
+ * 
+ * b) items.txt: this file contains a list of all items in the inventory
+ * with information about their quantities and total price in stock. See 
+ * assignment text for more information.
+ * 
+ * c) transactions.txt: this file contains a list of all the transactions
+ * for the day. You will be using it to print out the report of transactions
+ * Each time a transaction happens i.e. an item is added or removed, 
+ * a record should be stored in transactions.txt
+ *  
+ *
+ * You are asked to work on expanding the starter code so that your Java app can do the following:
+ * 
+ *  - read and output to the 2 files (transactions.txt, items.txt) as appropriate
+ *  - autogenerate a (5-digit) item id ie. 00001 for each new item
+ *  - add a new item to the inventory (by appending a line to items.txt) 
+ *  - update the quantity of an item already in store (in items.txt)
+ *  - remove an item from the inventory (by removing relevant entry in items.txt)
+ *  - search for an item in the inventory (items.txt)
+ *  - generate and print a daily transaction report (using transactions.txt)
+ * 
+ * Check out the full assignment brief for more information about the report.
+ */
+
+import java.io.*;
+import java.util.Scanner;
+
+public class store
+{
+	public static void main(String args[]) throws IOException
+	{
+
+		Scanner input = new Scanner(System.in);
 		
-//	String curr = list.get(Desc);
+		System.out.println("I N V E N T O R Y    M A N A G E M E N T    S Y S T E M");
+		System.out.println("-----------------------------------------------");
+		System.out.println("1. ADD NEW ITEM");
+		System.out.println("2. UPDATE QUANTITY OF EXISTING ITEM");
+		System.out.println("3. REMOVE ITEM");
+		System.out.println("4. VIEW DAILY TRANSACTION REPORT");
+		System.out.println("5. SEARCH FOR AN ITEM IN INVENTORY");
+		System.out.println("---------------------------------");
+		System.out.println("6. Exit");
+		
+		
+		System.out.print("\n Enter a choice and Press ENTER to continue[1-6]:");
+		int userinput = input.nextInt();
+			
 
+		while(userinput !=6)
+		{
+			if (userinput>6 || userinput<1) {
+				System.out.println("This doesn't appear to be a valid option...!");
+				break;
+			}
+			if (userinput == 1)	{
+				WriteItemsTxt.newItem(); 
+				System.out.print("\n New Item Added, your Items.Txt and Transactions.Txt files have been updated");	
+				break;
+			}
+			else if (userinput == 2) {		
+				UpdateQty.update(args); 
+				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
+				break;
+			}
+			else if (userinput == 3) {
+				RemoveItem.deleteItem(args); 
+				System.out.print("\n Item Removed, your Items.txt file has been updated");
+				break;
+			}	
+			else if (userinput == 4) {
+				PrintTransactionsReport.printReport(args); 
+				System.out.print("\n Report Printed");	
+				break;
+			}	
 
-        
-//       if (list.contains(Desc)) {
-//        System.out.println("\n" + "Success! We have found " + Desc + " within your Items.txt file \n");
-//	} else {
-//            System.out.println("The list does not contains it");
-//        
-//	}}}
-//        
-
-
-//    for (String item : list){
-//        if (item.contains(Desc)){
-//              System.out.println("\n" + "Success! We have found " + Desc + " within your Items.txt file \n");
-//              System.out.println("Here are the item details: " + item);
-//        } else {
-//            System.out.println("\n Item " + Desc + " was not found" );
-//            break;
-//        }
-//     }
-//  }
-//}
-//}
+			else if (userinput == 5) {
+			Search.searchItem(args); 
+			System.out.print("\n Seach Completed");	
+			break;
+		}	
+			
+		}
+		
+		
+		Exit.exitSequence(args); 
+	System.out.println("\n\n Thanks for using this program...!");
+	}
+}
