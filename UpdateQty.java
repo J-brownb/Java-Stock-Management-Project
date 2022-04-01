@@ -1,3 +1,4 @@
+package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -51,27 +52,36 @@ public static void update(String[] args) throws IOException {
     String oldqtystring = productdetail.get(3);
     int oldqty = Integer.parseInt(oldqtystring);
     
-
 //ask for new stock qty, save new qty inputted by user as new variable (new qty) 
 	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (Item) + ":"+ "\n");
 	int newqty = input.nextInt(); 
 //setting up new string called productstrng based on newqty variable, set qty in arraylist to match this
 	String productstrng = String.valueOf(newqty);
     productdetail.set(3, productstrng);
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! \n");
-
+	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! \n");		
+		
+	System.out.println(productdetail + "THIS IS WHERE THE SPACES ARE CREATED");
+	
 	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
 		  
+
+	
+	
 	//write over items.txt file with new info, use for loop to loop through each line of array list
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {
 		  curr = list.get(i);
+		  	  
+		  
 		  myWriter.write(curr + System.getProperty( "line.separator" ));
 		}
 	myWriter.close();
 	
+	
+	//adding to transaction report
+	//if the old qty is greater than the new qty then some of the stock must have been sold	
     if (oldqty > newqty) {
     	
     	//working out amount sold by subtracting new qty from old qty
@@ -93,7 +103,7 @@ public static void update(String[] args) throws IOException {
     	myWriter2.write(id + "," + desc + "," + qtysold + "," + amount + "," + stockremaining + ",Updated" + System.getProperty( "line.separator" ));
     	myWriter2.close();
 
-
+  //otherwise, items must have been added  
      } else {
     	 
     	//taking ID from array list  	
@@ -112,9 +122,5 @@ public static void update(String[] args) throws IOException {
   	
     	}}
     	
-	
-	
-
-
 	//WORKS BUT THERE ARE SPACES IN THE EDITED ARRAY LIST ITEM
 

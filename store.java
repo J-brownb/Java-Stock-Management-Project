@@ -33,6 +33,7 @@
  * Check out the full assignment brief for more information about the report.
  */
 
+package uk.ac.uos.i2p.s223358;
 import java.io.*;
 import java.util.Scanner;
 
@@ -51,8 +52,7 @@ public class store
 		System.out.println("4. VIEW DAILY TRANSACTION REPORT");
 		System.out.println("5. SEARCH FOR AN ITEM IN INVENTORY");
 		System.out.println("---------------------------------");
-		System.out.println("6. Exit");
-		
+		System.out.println("6. EXIT PROGRAM & PRINT END OF DAY REPORT");
 		
 		System.out.print("\n Enter a choice and Press ENTER to continue[1-6]:");
 		int userinput = input.nextInt();
@@ -85,7 +85,7 @@ public class store
 			}	
 
 			else if (userinput == 5) {
-			Search.searchItem(args); 
+//			Search.searchItem(args); 
 			System.out.print("\n Seach Completed");	
 			break;
 			

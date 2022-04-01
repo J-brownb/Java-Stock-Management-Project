@@ -1,1 +1,8 @@
-id,description,qtySold,stockRemaining,transactionType
+id,description, 
+00002,bb,12,276000.0,33
+00010,skdflkjsdlfs,3,60.0,7
+00003,item3,312,3744000.0,33,Updated
+00002,item2,28,644000.0,5,Updated
+00004,item4,0,0,44,Updated
+00006,item6,0,0,222,Updated
+00008,item8,0,0,222,Updated
