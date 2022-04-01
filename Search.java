@@ -32,69 +32,13 @@
  * 
  * Check out the full assignment brief for more information about the report.
  */
+package uk.ac.uos.i2p.s223358;
 
 import java.io.*;
 import java.util.Scanner;
 
-public class store
+public class Search
 {
 	public static void main(String args[]) throws IOException
 	{
-
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("I N V E N T O R Y    M A N A G E M E N T    S Y S T E M");
-		System.out.println("-----------------------------------------------");
-		System.out.println("1. ADD NEW ITEM");
-		System.out.println("2. UPDATE QUANTITY OF EXISTING ITEM");
-		System.out.println("3. REMOVE ITEM");
-		System.out.println("4. VIEW DAILY TRANSACTION REPORT");
-		System.out.println("5. SEARCH FOR AN ITEM IN INVENTORY");
-		System.out.println("---------------------------------");
-		System.out.println("6. Exit");
-		
-		
-		System.out.print("\n Enter a choice and Press ENTER to continue[1-6]:");
-		int userinput = input.nextInt();
-			
-
-		while(userinput !=6)
-		{
-			if (userinput>6 || userinput<1) {
-				System.out.println("This doesn't appear to be a valid option...!");
-				break;
-			}
-			if (userinput == 1)	{
-				WriteItemsTxt.newItem(); 
-				System.out.print("\n New Item Added, your Items.Txt and Transactions.Txt files have been updated");	
-				break;
-			}
-			else if (userinput == 2) {		
-				UpdateQty.update(args); 
-				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
-				break;
-			}
-			else if (userinput == 3) {
-				RemoveItem.deleteItem(args); 
-				System.out.print("\n Item Removed, your Items.txt file has been updated");
-				break;
-			}	
-			else if (userinput == 4) {
-				PrintTransactionsReport.printReport(args); 
-				System.out.print("\n Report Printed");	
-				break;
-			}	
-
-			else if (userinput == 5) {
-			Search.searchItem(args); 
-			System.out.print("\n Seach Completed");	
-			break;
-		}	
-			
-		}
-		
-		
-		Exit.exitSequence(args); 
-	System.out.println("\n\n Thanks for using this program...!");
-	}
-}
+	}}
