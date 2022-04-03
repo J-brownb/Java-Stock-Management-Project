@@ -29,9 +29,23 @@ public static void searchItem(String[] args) throws IOException {
 	    
 	    
         System.out.println(list.contains(searchterm));
+        
+		System.out.println(list);
+		// find word in String
+		boolean val = list.contains(searchterm);
+		if(val)
+			System.out.println("String found: "+searchterm);
+		else 
+			System.out.println("string not found");
+
+
+//prompt new action from user 
+System.out.println("\nWhat Would You Like To Do Next? \n");
+store.main(args); 
 
 }}
-    
+        
+            
     
 //	System.out.print("Enter Product Description. Example Format 'item1':");
 //	Scanner in = new Scanner(System.in);

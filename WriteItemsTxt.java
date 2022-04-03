@@ -48,9 +48,17 @@ System.out.print("Total Price Is: " + totalPrice + "\n");
 
 //Writing to the items.txt file and the transactions.txt file
 myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+//Writing new line to trans.txt file, qty sold is 0 as just been added 
+myWriter2.write(ID + "," + Description + "," + "0" + "," + totalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
 myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
 myWriter2.close();
 myWriter.close();
+
+
+//prompt new action from user 
+System.out.println("\nWhat Would You Like To Do Next? \n");
+store.main(null); 
+
 	} catch (IOException e) {
 	System.out.println("Error");
 e.printStackTrace();

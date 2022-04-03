@@ -83,6 +83,12 @@ list.remove(Item);
     	myWriter2.write( "\n" + productdetail.toString().substring(1, productdetail.toString().length() - 1 ));
     	myWriter2.close();
 
+    	
+    	//prompt new action from user 
+    	System.out.println("\nWhat Would You Like To Do Next? \n");
+    	store.main(args); 
+    	
+    	
 	    
 	}}
 	    

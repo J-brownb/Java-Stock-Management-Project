@@ -1,4 +1,3 @@
-package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -26,7 +25,7 @@ public static void update(String[] args) throws IOException {
 		  String curr = list.get(i);
 		  System.out.println(i + ". " + curr);
 		}
-	
+	 
 //allow the user to choose the item they want to update, set their choice as variable 'item'
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
@@ -35,7 +34,7 @@ public static void update(String[] args) throws IOException {
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");
 
-//declare string curr as the item that the user selected (full row of details)
+//declare string curr as the item that the user selected (full row of details) 
 	String curr = list.get(Item);
 	
 //use split to break the string into an array, new item at every comma
@@ -52,36 +51,35 @@ public static void update(String[] args) throws IOException {
     String oldqtystring = productdetail.get(3);
     int oldqty = Integer.parseInt(oldqtystring);
     
+
 //ask for new stock qty, save new qty inputted by user as new variable (new qty) 
 	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (Item) + ":"+ "\n");
-	int newqty = input.nextInt(); 
+	int newqty = input.nextInt();  
+	
+	
 //setting up new string called productstrng based on newqty variable, set qty in arraylist to match this
 	String productstrng = String.valueOf(newqty);
-    productdetail.set(3, productstrng);
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! \n");		
+	
 		
-	System.out.println(productdetail + "THIS IS WHERE THE SPACES ARE CREATED");
+    productdetail.set(3, productstrng);
+    
+    
+	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! \n");
+
+
 	
 	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
 		  
-
-	
-	
 	//write over items.txt file with new info, use for loop to loop through each line of array list
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {
 		  curr = list.get(i);
-		  	  
-		  
 		  myWriter.write(curr + System.getProperty( "line.separator" ));
 		}
 	myWriter.close();
 	
-	
-	//adding to transaction report
-	//if the old qty is greater than the new qty then some of the stock must have been sold	
     if (oldqty > newqty) {
     	
     	//working out amount sold by subtracting new qty from old qty
@@ -103,9 +101,9 @@ public static void update(String[] args) throws IOException {
     	myWriter2.write(id + "," + desc + "," + qtysold + "," + amount + "," + stockremaining + ",Updated" + System.getProperty( "line.separator" ));
     	myWriter2.close();
 
-  //otherwise, items must have been added  
+
      } else {
-    	 
+    	  
     	//taking ID from array list  	
      	String id = productdetail.get(0);
      	//taking desc from array list
@@ -119,8 +117,16 @@ public static void update(String[] args) throws IOException {
     	myWriter4.close();
      	
 	}
+    
+  //prompt new action from user 
+    System.out.println("\nWhat Would You Like To Do Next? \n");
+    store.main(args); 
   	
     	}}
     	
+	
+	
+
+
 	//WORKS BUT THERE ARE SPACES IN THE EDITED ARRAY LIST ITEM
 
