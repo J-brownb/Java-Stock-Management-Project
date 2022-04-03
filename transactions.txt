@@ -6,3 +6,4 @@ id,description,
 00004,item4,0,0,44,Updated
 00006,item6,0,0,222,Updated
 00008,item8,0,0,222,Updated
+00011,hel,50.0,30,1500.0
