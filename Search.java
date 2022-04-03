@@ -1,44 +1,60 @@
-/* UNIVERSITY OF SUFFOLK - INTRODUCTION TO PROGRAMMING 
- * Module assignment
- * 
- * Module Lead: Dr. Kakia Chatsiou
- * Last updated 2022-02-25
- * 
- * The assignment starter code consists of 3 files:
- * 
- * a) store.java: this file contains starting code for the inventory
- * management control system. See assignment brief document for 
- * more information on how to build the rest of the application.
- * 
- * b) items.txt: this file contains a list of all items in the inventory
- * with information about their quantities and total price in stock. See 
- * assignment text for more information.
- * 
- * c) transactions.txt: this file contains a list of all the transactions
- * for the day. You will be using it to print out the report of transactions
- * Each time a transaction happens i.e. an item is added or removed, 
- * a record should be stored in transactions.txt
- *  
- *
- * You are asked to work on expanding the starter code so that your Java app can do the following:
- * 
- *  - read and output to the 2 files (transactions.txt, items.txt) as appropriate
- *  - autogenerate a (5-digit) item id ie. 00001 for each new item
- *  - add a new item to the inventory (by appending a line to items.txt) 
- *  - update the quantity of an item already in store (in items.txt)
- *  - remove an item from the inventory (by removing relevant entry in items.txt)
- *  - search for an item in the inventory (items.txt)
- *  - generate and print a daily transaction report (using transactions.txt)
- * 
- * Check out the full assignment brief for more information about the report.
- */
-package uk.ac.uos.i2p.s223358;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner; 
+import java.io.IOException;
+public class Search {
+public static void searchItem(String[] args) throws IOException {
+	
+	
+//scan the items.txt file 
+	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
+//create an array list with each new line of the items.txt file 
+	ArrayList<String> list = new ArrayList<String>();
+	while (s.hasNextLine()){
+	    list.add(s.nextLine());
+	}
+		s.close();
+		
+		 
+		System.out.print("Enter Search Term");
+		Scanner in = new Scanner(System.in);
+		String searchterm = in.nextLine();
+	        
+	    
+        System.out.println(list);
 
-import java.io.*;
-import java.util.Scanner;
+	    
+	    
+        System.out.println(list.contains(searchterm));
 
-public class Search
-{
-	public static void main(String args[]) throws IOException
-	{
-	}}
+}}
+    
+    
+//	System.out.print("Enter Product Description. Example Format 'item1':");
+//	Scanner in = new Scanner(System.in);
+//	String Desc = in.nextLine();
+//	
+//	if (Desc.length() < 4) {
+//        System.out.println("\n Sorry, your search term is too broad, use at least 4 characters of text");
+//    	System.out.print("Enter Product Description. Example Format 'item1':");
+//    	in = new Scanner(System.in);
+//    	Desc = in.nextLine();
+//	} else {
+//	
+//		if (list.contains(Desc)) {
+//	    	System.out.print("Found:");
+//			} else {
+//		    	System.out.print("Not Found:");
+//			}
+//	
+//	
+//	}}}
+//		
+
+//     }
+//  }
+//}
+//}
