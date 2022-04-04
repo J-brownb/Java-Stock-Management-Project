@@ -8,3 +8,5 @@ id,description,unitPrice,qtyInStock,totalPrice
 00007,4,4.0,4,16.0
 00008,hello,4.0,5,20.0
 00009,Jonny Tes,50.0,2,100.0
+00010,hello,5.0,4,20.0
+00011,hi,20.0,5,100.0
