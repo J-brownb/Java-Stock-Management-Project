@@ -15,7 +15,7 @@ public static void searchItem(String[] args) throws IOException {
 		s.close();
 				
 		//Taking the product name or description from the user
-		System.out.print("Enter Product Name or Description:");
+		System.out.print("Enter Search Term:");
 		Scanner in = new Scanner(System.in);
 		String var = in.nextLine();
     	 System.out.println("\nSearch Completed.. Here are the mentions of " + "'" + var + "' " + "we found: \n");
