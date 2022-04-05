@@ -12,3 +12,7 @@ id,description,qtySold,amount,stockRemaining,transactionType
 00010,hello,5.0,4,20.0
 00011,hi,0,100.0,5,Created (added)
 00011,hi,20.0,5,100.0
+00010,hi,0,60.0,30,Created (added)
+00010,hi,2.0,30,60.0
+00010,hi,0,60.0,3,Created (added)
+00010,hi,20.0,3,60.0

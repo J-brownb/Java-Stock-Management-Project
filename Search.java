@@ -13,72 +13,44 @@ public static void searchItem(String[] args) throws IOException {
 		    list.add(s.nextLine());
 		}
 		s.close();
-		
-
-
-		System.out.print(list + "\n\n");
-
-		
-		//Taking the Description 
-		System.out.print("Enter Product Description:");
+				
+		//Taking the product name or description from the user
+		System.out.print("Enter Product Name or Description:");
 		Scanner in = new Scanner(System.in);
 		String var = in.nextLine();
+    	 System.out.println("\nSearch Completed.. Here are the mentions of " + "'" + var + "' " + "we found: \n");
 
-//using a for loop to iterate through 	
-	      for (String s1 : list){
+         //using a for each loop to iterate over the array list
+		for (String s1 : list){
+	    	  //looking for the user variable 
 	          if (s1.contains(var)){
-	                System.out.println(s1);
-	          }}}}
+	        	//if it contains user variable, we print the line its on 	                
+	                System.out.println("found on this line: " + s1);  
 
+	          }}
 		
-		
-//		  boolean ans = list.contains(var);
-//		  
-//	        if (ans)
-//	            System.out.println("The list contains " + var);
-//	        else
-//	            System.out.println("The list does not contain " + var);
-//	  
+        System.out.println("\n\nWhat would you like to do next?");
+		System.out.println("1. SEARCH AGAIN");
+		System.out.println("2. RETURN TO MAIN MENU");
+		Scanner input = new Scanner(System.in);
+		int userinput = input.nextInt();
 
-		
-		
-//		System.out.print("Enter Search Term:");
-//		Scanner in = new Scanner(System.in);
-//		String searchterm = in.nextLine();
-		
-//		   // prints true
-//        System.out.println(data.contains("item1"));
-// 
-//        // prints false
-//    
-//
-//		}
-//}		}}
-		
+		while(userinput !=2)
+		{
+			if (userinput>2 || userinput<1) {
+				System.out.println("This doesn't appear to be a valid option...!");
+				break;
+			}
+			if (userinput == 1)	{
+				Search.searchItem(args); 
+				break;
+			}
+			else if (userinput == 2) {		
+				store.main(args); 
+				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
+				break;
+			}
 
-//
-//        System.out.println(list);
-//
-//        System.out.println(searchterm);
-//        
-//        System.out.println(list.contains(searchterm));
-//
-//        boolean found = false;
-//
-//	    
-//        for(String x : list){
-//        	if(x == searchterm){
-//                found = true;
-//                break;
-//            }
-//        }
-//        
-//        System.out.println(found);
+}}}
+    
 
-
-
-//prompt new action from user 
-//System.out.println("\nWhat Would You Like To Do Next? \n");
-//store.main(args); 
-//
-//}}
