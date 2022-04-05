@@ -4,7 +4,6 @@ id,description,unitPrice,qtyInStock,totalPrice
 00005, item5, 5000.0, 33, 60000.0
 00006, item6, 4500.0, 222, 90000.0
 00007, item7, 3000.0, 50, 45000.0
-
 00007,4,4.0,4,16.0
 00008,hello,4.0,5,20.0
 00009,Jonny Tes,50.0,2,100.0
