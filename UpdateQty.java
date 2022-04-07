@@ -140,9 +140,4 @@ List<String> productdetailsarray = Arrays.asList(productdetails);
   	
     	}}
     	
-	
-	
-
-
-	//WORKS BUT THERE ARE SPACES IN THE EDITED ARRAY LIST ITEM
 
