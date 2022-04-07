@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner; 
 import java.io.IOException;
 public class UpdateQty {
@@ -19,7 +20,7 @@ public static void update(String[] args) throws IOException {
 	s.close();
 	
 //print the items that are currently within the array list called 'string' using a for loop
-	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n");
+	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n"); 
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
 	for (int i=1; i<list.size(); i++) {
 		  String curr = list.get(i);
@@ -39,13 +40,21 @@ public static void update(String[] args) throws IOException {
 	
 //use split to break the string into an array, new item at every comma
 	String[] productdetails = curr.split(",");
+
+		
+	//convert to array list
+List<String> productdetailsarray = Arrays.asList(productdetails);
+
+
+//p.removeAll(Arrays.asList("", null, " ", "exit"));
+
 	
-//convert to array list
-	List<String> productdetailsarray = Arrays.asList(productdetails);
 	ArrayList<String> productdetail = new ArrayList<String>(productdetailsarray);
 	
+		
+	
 //print item name (at pos 0), and current stock levels (at pos 3)
-    System.out.println("Item name: " + productdetail.get(0));
+    System.out.println("\nItem name: " + productdetail.get(0));
     System.out.println("Amount currently in stock: " + productdetail.get(3));
     //collect old qty for updating later on
     String oldqtystring = productdetail.get(3);
@@ -59,19 +68,26 @@ public static void update(String[] args) throws IOException {
 	
 //setting up new string called productstrng based on newqty variable, set qty in arraylist to match this
 	String productstrng = String.valueOf(newqty);
-	
-		
+			
     productdetail.set(3, productstrng);
     
     
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! \n");
+    
+    
+	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! A record has also been added to your transactions.txt file. \n");
 
 
 	
 	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
 	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
-		  
-	//write over items.txt file with new info, use for loop to loop through each line of array list
+	
+	//using iterator to get rid of white space
+	ListIterator<String> itr = list.listIterator();
+	while (itr.hasNext()) {
+	  itr.set(itr.next().replaceAll("\\s", ""));
+	}
+	
+		//write over items.txt file with new info, use for loop to loop through each line of array list
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
 	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
 	for (int i=1; i<list.size(); i++) {

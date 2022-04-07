@@ -7,11 +7,10 @@ import java.util.List;
 import java.io.IOException;
 public class RemoveItem {
 	public static void deleteItem(String[] args) throws IOException {
-	
-	
-//scan the items.txt file 
+
+////scan the items.txt file 
 	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
-//create an array list with each new line of the items.txt file 
+////create an array list with each new line of the items.txt file 
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){
 	    list.add(s.nextLine());
@@ -36,20 +35,12 @@ public class RemoveItem {
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Remove Item Number " + (Item) + "\n" + "\n" + "Your Items.txt and Transactions.txt files have been updated!");
 
-		
-//remove 'item' from the arraylist 'list'
-list.remove(Item);
+
+	
+
 	
 	
-	
-//write the updated ArrayList to the items.txt file using a for loop
-	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
-	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
-	for (int i=1; i<list.size(); i++) {
-		  String curr = list.get(i);
-		  myWriter.write(curr + System.getProperty( "line.separator" ));
-		}
-	myWriter.close();
+
 	
 	//get item details from array list for printing to transactions.txt
 	
@@ -83,6 +74,19 @@ list.remove(Item);
     	myWriter2.write( "\n" + productdetail.toString().substring(1, productdetail.toString().length() - 1 ));
     	myWriter2.close();
 
+		
+//remove 'item' from the arraylist 'list'
+list.remove(Item);
+
+
+//write the updated ArrayList to the items.txt file using a for loop
+	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt");
+	  myWriter.write("id,description,unitPrice,qtyInStock,totalPrice" + System.getProperty( "line.separator" ));
+	for (int i=1; i<list.size(); i++) {
+		  String curr1 = list.get(i);
+		  myWriter.write(curr1 + System.getProperty( "line.separator" ));
+		}
+	myWriter.close();
     	
     	//prompt new action from user 
     	System.out.println("\nWhat Would You Like To Do Next? \n");

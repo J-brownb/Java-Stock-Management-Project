@@ -16,3 +16,17 @@ id,description,qtySold,amount,stockRemaining,transactionType
 00010,hi,2.0,30,60.0
 00010,hi,0,60.0,3,Created (added)
 00010,hi,20.0,3,60.0
+00008,item8,50,125000.0,50,Updated
+00001,item1,0,0,50,Updated
+00002,item2,28,644000.0,5,Updated
+00005,item5,0,0,50,Updated
+00004,item4,10,100000.0,30,Updated
+00007,item7,9,27000.0,6,Updated
+00010,hi,0,0,33,Updated
+00010,hi,0,0,55,Updated
+00002,item2,0,0,44,Updated
+00001,item1,0,0,909,Updated
+00001,item1,0,0,99999,Updated
+00007, item7, 0, 0, 15, Removed
+00006, item6, 0, 0, 20, Removed
+00005, item5, 0, 0, 12, Removed00001,item1,99559,1.194708E9,440,Updated
