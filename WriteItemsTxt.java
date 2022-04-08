@@ -46,20 +46,15 @@ int qtyInStock = input.nextInt();
 
 //Calculating Total Price 
 double totalPrice = qtyInStock * unitPrice;
-//double rounded = Math.round(totalPrice);
-//could work if no other solution
-//System.out.print(rounded); 
 
-
-
-
-System.out.print("Total Price Is: " + totalPrice + "\n"); 
+//rounding the total price to two decimal points, so we don't get a long recurring number
+double roundedTotalPrice = Math.round(totalPrice*100.0)/100.0;
+System.out.print("Total Price Is: " + roundedTotalPrice + "\n");
 
 //Writing to the items.txt file and the transactions.txt file
-myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  roundedTotalPrice + System.getProperty( "line.separator" ));
 //Writing new line to trans.txt file, qty sold is 0 as just been added 
-myWriter2.write(ID + "," + Description + "," + "0" + "," + totalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
-myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter2.write(ID + "," + Description + "," + "0" + "," + roundedTotalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
 myWriter2.close();
 myWriter.close();
 

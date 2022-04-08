@@ -1,9 +1,10 @@
+package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner; // program uses class Scanner
 import java.io.IOException;
-public class WriteItemsTxt {
+public class AddItem {
 public static void newItem() {
 
 	try { 
@@ -26,17 +27,17 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 	//add leading zeros 
 	String ID = String.format("%05d", NumberofItems);
 	System.out.println("Your New Item ID Is " + ID);
-	  
+	
+		
 Scanner input = new Scanner(System.in);
 
 //Taking the Description 
 System.out.print("Enter Product Description:");
-Scanner in = new Scanner(System.in);
-String Description = in.nextLine();
+String Description = input.nextLine();
 
 //Taking the Price Per Unit
 System.out.print("Enter Price Per Unit:"); 
-double unitPrice = input.nextInt(); 
+double unitPrice = input.nextDouble(); 
 
 //Taking the Quantity 
 System.out.print("Enter How Many Are In Stock:"); 
@@ -44,20 +45,22 @@ int qtyInStock = input.nextInt();
 
 //Calculating Total Price 
 double totalPrice = qtyInStock * unitPrice;
-System.out.print("Total Price Is: " + totalPrice + "\n"); 
+
+//rounding the total price to two decimal points, so we don't get a long recurring number
+double roundedTotalPrice = Math.round(totalPrice*100.0)/100.0;
+System.out.print("Total Price Is: " + roundedTotalPrice + "\n");
 
 //Writing to the items.txt file and the transactions.txt file
-myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  roundedTotalPrice + System.getProperty( "line.separator" ));
 //Writing new line to trans.txt file, qty sold is 0 as just been added 
-myWriter2.write(ID + "," + Description + "," + "0" + "," + totalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
-myWriter2.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  totalPrice + System.getProperty( "line.separator" ));
+myWriter2.write(ID + "," + Description + "," + "0" + "," + roundedTotalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
 myWriter2.close();
 myWriter.close();
 
 
 //prompt new action from user 
 System.out.println("\nWhat Would You Like To Do Next? \n");
-store.main(null); 
+Store.main(null); 
 
 	} catch (IOException e) {
 	System.out.println("Error");
