@@ -1,3 +1,5 @@
+package uk.ac.uos.i2p.s223358;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner; 
@@ -46,7 +48,7 @@ public static void searchItem(String[] args) throws IOException {
 				break;
 			}
 			else if (userinput == 2) {		
-				store.main(args); 
+				Store.main(args); 
 				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
 				break;
 			}

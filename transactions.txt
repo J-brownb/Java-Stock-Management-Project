@@ -1,1 +1,10 @@
 id,description,qtySold,amount,stockRemaining,transactionType
+00009,hello,0,250.0,5,Created (added)
+00009,hello,50.0,5,250.0
+00006,item6,0,0,200,Updated
+00009,Hello2,0,400.0,4,Created (added)
+00009,Hello2,100.0,4,400.0
+00010,hi,0,2500.0,5,Created (added)
+00010,hi,500.0,5,2500.0
+00011,hi,0,250.0,5,Created (added)
+00011,hi,50.0,5,250.0

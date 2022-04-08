@@ -90,7 +90,7 @@ list.remove(Item);
     	
     	//prompt new action from user 
     	System.out.println("\nWhat Would You Like To Do Next? \n");
-    	store.main(args); 
+    	Store.main(args); 
     	
     	
 	    
