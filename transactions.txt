@@ -1,1 +1,1 @@
-id,description,qtySold,amount,stockRemaining,transactionType
+id,description,qtySold,stockRemaining,transactionType
