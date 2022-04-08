@@ -1,1 +1,2 @@
 id,description,qtySold,stockRemaining,transactionType
+00004,aa,0,144.0,12,Created (added)

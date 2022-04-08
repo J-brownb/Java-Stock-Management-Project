@@ -2,3 +2,4 @@ id,description,unitPrice,qtyInStock,totalPrice
 00001,item1,12000.0,1,12000.0
 00002,item2,23000.0,33,759000.0
 
+00004,aa,12.0,12,144.0
