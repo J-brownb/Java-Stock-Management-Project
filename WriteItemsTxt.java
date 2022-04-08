@@ -38,7 +38,7 @@ String Description = input.nextLine();
 
 //Taking the Price Per Unit
 System.out.print("Enter Price Per Unit:"); 
-double unitPrice = input.nextInt(); 
+double unitPrice = input.nextDouble(); 
 
 //Taking the Quantity 
 System.out.print("Enter How Many Are In Stock:"); 
@@ -46,6 +46,13 @@ int qtyInStock = input.nextInt();
 
 //Calculating Total Price 
 double totalPrice = qtyInStock * unitPrice;
+//double rounded = Math.round(totalPrice);
+//could work if no other solution
+//System.out.print(rounded); 
+
+
+
+
 System.out.print("Total Price Is: " + totalPrice + "\n"); 
 
 //Writing to the items.txt file and the transactions.txt file
