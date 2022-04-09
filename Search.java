@@ -37,22 +37,16 @@ public static void searchItem(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
 		int userinput = input.nextInt();
 
-		while(userinput !=2)
-		{
-			if (userinput>2 || userinput<1) {
-				System.out.println("This doesn't appear to be a valid option...!");
-				break;
+		if (userinput>2 || userinput<1) {
+			System.out.println("This doesn't appear to be a valid option...!");
 			}
 			if (userinput == 1)	{
 				Search.searchItem(args); 
-				break;
 			}
 			else if (userinput == 2) {		
 				Store.main(args); 
-				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
-				break;
 			}
 
-}}}
+}}
     
 

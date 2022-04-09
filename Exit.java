@@ -1,3 +1,5 @@
+package uk.ac.uos.i2p.s223358;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -38,7 +40,6 @@ if (myObj2.createNewFile()) {
 	
 	
 	System.out.println("Exiting.. A Daily Transactions Report Can Be Found On Your Desktop");
-	System.out.println(list);
 
 
 	//wiping the transactions.txt report so it can be used for the next program run

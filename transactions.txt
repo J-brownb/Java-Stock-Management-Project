@@ -1,2 +1,4 @@
 id,description,qtySold,stockRemaining,transactionType
-00004,aa,0,144.0,12,Created (added)
+
+00004, aa, 0, 0, 12, Removed
+00001, item1, 0, 0, 1, Removed

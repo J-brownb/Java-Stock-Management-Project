@@ -33,10 +33,11 @@
  * Check out the full assignment brief for more information about the report.
  */
 
+package uk.ac.uos.i2p.s223358;
 import java.io.*;
 import java.util.Scanner;
 
-public class store
+public class Store
 {
 	public static void main(String args[]) throws IOException
 	{
@@ -58,46 +59,36 @@ public class store
 		int userinput = input.nextInt();
 			
 
-		while(userinput !=7)
-		{
 			if (userinput>6 || userinput<1) {
-				System.out.println("This doesn't appear to be a valid option...!");
-				break;
+				System.out.println("This doesn't appear to be a valid option, try again:");
+				Store.main(args); 
 			}
 			if (userinput == 1)	{
-				WriteItemsTxt.newItem(); 
+				AddItem.newItem(); 
 				System.out.print("\n New Item Added, your Items.Txt and Transactions.Txt files have been updated");	
-				break;
 			}
 			else if (userinput == 2) {		
 				UpdateQty.update(args); 
 				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
-				break;
 			}
 			else if (userinput == 3) {
 				RemoveItem.deleteItem(args); 
-				break;
 			}	
 			else if (userinput == 4) {
 				PrintTransactionsReport.printReport(args); 
 				System.out.print("\n Report Printed");	
-				break;
 			}	
 
 			else if (userinput == 5) {
 			Search.searchItem(args); 
-			System.out.print("\n Seach Completed");	
-			break;
-			
+
 			}	
 
 			else if (userinput == 6) {
 				Exit.exitSequence(args); 
 				System.out.println("\n\n Bye Bye, thanks for using this program...!");
-			break;
-		}	
+
+
+			}	
 			
-		}
-		
-	}
-}
+		}}

@@ -1,3 +1,4 @@
+package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -8,9 +9,9 @@ import java.io.IOException;
 public class RemoveItem {
 	public static void deleteItem(String[] args) throws IOException {
 
-////scan the items.txt file 
+//scan the items.txt file 
 	Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt"));
-////create an array list with each new line of the items.txt file 
+//create an array list with each new line of the items.txt file 
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){
 	    list.add(s.nextLine());
@@ -34,16 +35,7 @@ public class RemoveItem {
 
 //print the item that the user chose to update
 	System.out.print("\n" + "You Chose to Remove Item Number " + (Item) + "\n" + "\n" + "Your Items.txt and Transactions.txt files have been updated!");
-
-
-	
-
-	
-	
-
-	
-	//get item details from array list for printing to transactions.txt
-	
+		
 	//declare string curr as the item that the user selected (full row of details)
 		String curr = list.get(Item);
 		
