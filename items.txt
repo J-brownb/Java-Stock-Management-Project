@@ -1,2 +1,3 @@
 id,description,unitPrice,qtyInStock,totalPrice
-00002,item2,23000.0,33,759000.0
+00001,Banana,0.50,1500,750
+
