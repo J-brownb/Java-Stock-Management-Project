@@ -2,3 +2,4 @@ id,description,qtySold,stockRemaining,transactionType
 
 00004, aa, 0, 0, 12, Removed
 00001, item1, 0, 0, 1, Removed00001,Banana,501,250.5,999,Updated
+00001,Banana,99,49.5,900,Updated
