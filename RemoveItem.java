@@ -1,4 +1,3 @@
-package uk.ac.uos.i2p.s223358;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -40,30 +39,30 @@ public class RemoveItem {
 		String curr = list.get(Item);
 		
 	//use split to break the string into an array, new item at every comma
-		String[] productdetails = curr.split(",");
+		String[] productDetails = curr.split(",");
 		
 	//convert to array list
-		List<String> productdetailsarray = Arrays.asList(productdetails);
-		ArrayList<String> productdetail = new ArrayList<String>(productdetailsarray);	
+		List<String> productDetailsArray = Arrays.asList(productDetails);
+		ArrayList<String> productDetail = new ArrayList<String>(productDetailsArray);	
 	
     	    
 		//ID stays as is
 		//Desc stays as is 
 		//qty sold is 0 as product is being removed 
-	    productdetail.set(2, "0");
+	    productDetail.set(2, "0");
 	    //getting the qty 
-	    String qtystring = productdetail.get(3);
+	    String qtyString = productDetail.get(3);
 	    //set the qty at pos 4 in the new array 
-	    productdetail.set(4, qtystring);
+	    productDetail.set(4, qtyString);
 	    //set amount as 0 as being removed
-	    productdetail.set(3, "0");
+	    productDetail.set(3, "0");
 	    //set transaction type field as removed
-	    productdetail.add(5, "Removed");
+	    productDetail.add(5, "Removed");
 	    
 	    
 		//add new array to transactions.txt file, remove square brackets on either side
 	    FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
-    	myWriter2.write( "\n" + productdetail.toString().substring(1, productdetail.toString().length() - 1 ));
+    	myWriter2.write( "\n" + productDetail.toString().substring(1, productDetail.toString().length() - 1 ));
     	myWriter2.close();
 
 		

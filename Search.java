@@ -17,13 +17,13 @@ public static void searchItem(String[] args) throws IOException {
 		//Taking the product name or description from the user
 		System.out.print("Enter Search Term:");
 		Scanner in = new Scanner(System.in);
-		String var = in.nextLine();
-    	 System.out.println("\nSearch Completed.. Here are the mentions of " + "'" + var + "' " + "we found: \n");
+		String searchTerm = in.nextLine();
+    	 System.out.println("\nSearch Completed.. Here are the mentions of " + "'" + searchTerm + "' " + "we found: \n");
 
          //using a for each loop to iterate over the array list
 		for (String s1 : list){
 	    	  //looking for the user variable 
-	          if (s1.contains(var)){
+	          if (s1.contains(searchTerm)){
 	        	//if it contains user variable, we print the line its on 	                
 	                System.out.println("found on this line: " + s1);  
 
@@ -45,7 +45,7 @@ public static void searchItem(String[] args) throws IOException {
 				Search.searchItem(args); 
 			}
 			else if (userinput == 2) {		
-				store.main(args); 
+				Store.main(args); 
 				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
 			}}}
 

@@ -20,7 +20,8 @@ public static void update(String[] args) throws IOException {
 	s.close();
 	
 //print the items that are currently within the array list called 'string' using a for loop
-	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n"); 
+	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n"); 	
+	
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
 	for (int i=1; i<list.size(); i++) {
 		  String curr = list.get(i);
@@ -39,47 +40,41 @@ public static void update(String[] args) throws IOException {
 	String curr = list.get(Item);
 	
 //use split to break the string into an array, new item at every comma
-	String[] productdetails = curr.split(",");
+	String[] productDetails = curr.split(",");
 
 		
 	//convert to array list
-List<String> productdetailsarray = Arrays.asList(productdetails);
-
-
-//p.removeAll(Arrays.asList("", null, " ", "exit"));
-
-	
-	ArrayList<String> productdetail = new ArrayList<String>(productdetailsarray);
-	
-		
+List<String> productDetailsArray = Arrays.asList(productDetails);
+	ArrayList<String> productDetail = new ArrayList<String>(productDetailsArray);
+			
 	
 //print item name (at pos 0), and current stock levels (at pos 3)
-    System.out.println("\nItem name: " + productdetail.get(0));
-    System.out.println("Amount currently in stock: " + productdetail.get(3));
+    System.out.println("\nItem name: " + productDetail.get(0));
+    System.out.println("Amount currently in stock: " + productDetail.get(3));
     //collect old qty for updating later on
-    String oldqtystring = productdetail.get(3);
-    int oldqty = Integer.parseInt(oldqtystring);
+    String oldQtyString = productDetail.get(3);
+    int oldQty = Integer.parseInt(oldQtyString);
     
 
 //ask for new stock qty, save new qty inputted by user as new variable (new qty) 
 	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (Item) + ":"+ "\n");
-	int newqty = input.nextInt();  
+	int newQty = input.nextInt();  
 	
 	
 //setting up new string called productstrng based on newqty variable, set qty in arraylist to match this
-	String productstrng = String.valueOf(newqty);
+	String productStrng = String.valueOf(newQty);
 			
-    productdetail.set(3, productstrng);
+    productDetail.set(3, productStrng);
     
     
     
     
-	System.out.println("New item details: " + productdetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! A record has also been added to your transactions.txt file. \n");
+	System.out.println("New item details: " + productDetail + "\n" + "Your change has been accepted and your Items.txt file has been updated! A record has also been added to your transactions.txt file. \n");
 
 
 	
 	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
-	list.set(Item, "" + (productdetail.toString().substring(1, productdetail.toString().length() - 1)));
+	list.set(Item, "" + (productDetail.toString().substring(1, productDetail.toString().length() - 1)));
 	
 	//using iterator to get rid of white space
 	ListIterator<String> itr = list.listIterator();
@@ -96,47 +91,47 @@ List<String> productdetailsarray = Arrays.asList(productdetails);
 		}
 	myWriter.close();
 	
-    if (oldqty > newqty) {
+    if (oldQty > newQty) {
     	
     	//working out amount sold by subtracting new qty from old qty
-    	int qtysold = oldqty - newqty;
+    	int qtySold = oldQty - newQty;
     	//working out stock remaining by using newqty value given by user
-    	int stockremaining = newqty;
+    	int stockRemaining = newQty;
     	//taking ID from array list  	
-    	String id = productdetail.get(0);
+    	String id = productDetail.get(0);
     	//taking desc from array list
-    	String desc = productdetail.get(1);
+    	String desc = productDetail.get(1);
     	//taking amount per unit from array list and converting to double
-    	String amountstrng = productdetail.get(2);
-    	double cost = Double.parseDouble(amountstrng); 
+    	String amountStrng = productDetail.get(2);
+    	double cost = Double.parseDouble(amountStrng); 
     	//working out amount of revenue by multiplying cost per unit by qty sold 
-    	double amount = cost * qtysold;
+    	double amount = cost * qtySold;
     	//writing all this as an entry to transactions.txt   	
     	
     	FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
-    	myWriter2.write(id + "," + desc + "," + qtysold + "," + amount + "," + stockremaining + ",Updated" + System.getProperty( "line.separator" ));
+    	myWriter2.write(id + "," + desc + "," + qtySold + "," + amount + "," + stockRemaining + ",Updated" + System.getProperty( "line.separator" ));
     	myWriter2.close();
 
 
      } else {
     	  
     	//taking ID from array list  	
-     	String id = productdetail.get(0);
+     	String id = productDetail.get(0);
      	//taking desc from array list
-     	String desc = productdetail.get(1);
+     	String desc = productDetail.get(1);
      	//qty sold will be 0 as new qty is larger than oldqty
      	//amount will be 0 as no revenue is created 
     	//stockremaining is simply the user inputted value 'newqty'
     	//writing all this as an entry to transactions.txt   	
     	FileWriter myWriter4 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
-    	myWriter4.write(id + "," + desc + "," + "0" + "," + "0" + "," + newqty + ",Updated" + System.getProperty( "line.separator" ));
+    	myWriter4.write(id + "," + desc + "," + "0" + "," + "0" + "," + newQty + ",Updated" + System.getProperty( "line.separator" ));
     	myWriter4.close();
      	
 	}
     
   //prompt new action from user 
     System.out.println("\nWhat Would You Like To Do Next? \n");
-    store.main(args); 
+    Store.main(args); 
   	
     	}}
     	

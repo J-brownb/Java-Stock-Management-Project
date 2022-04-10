@@ -16,7 +16,7 @@ public static void printReport(String[] args) throws IOException {
 	
 	//prompt new action from user 
 	System.out.println("\nWhat Would You Like To Do Next? \n");
-	store.main(args); 
+	Store.main(args); 
 	
 }}
 	
