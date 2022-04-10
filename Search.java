@@ -1,5 +1,3 @@
-package uk.ac.uos.i2p.s223358;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner; 
@@ -37,16 +35,19 @@ public static void searchItem(String[] args) throws IOException {
 		Scanner input = new Scanner(System.in);
 		int userinput = input.nextInt();
 
-		if (userinput>2 || userinput<1) {
-			System.out.println("This doesn't appear to be a valid option...!");
+		
+	
+			if (userinput>2 || userinput<1) {
+				System.out.println("This doesn't appear to be a valid option...!");
+				
 			}
 			if (userinput == 1)	{
 				Search.searchItem(args); 
 			}
 			else if (userinput == 2) {		
-				Store.main(args); 
-			}
+				store.main(args); 
+				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
+			}}}
 
-}}
     
 
