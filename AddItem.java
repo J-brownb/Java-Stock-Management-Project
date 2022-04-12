@@ -21,7 +21,7 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 	//create the ID from size of array  
 	int NumberofItems = list.size(); 
 	//add leading zeros 
-	String ID = String.format("%05d", NumberofItems);
+	String ID = String.format("%05d", NumberofItems); 
 	System.out.println("Your New Item ID Is " + ID);
 	
 		

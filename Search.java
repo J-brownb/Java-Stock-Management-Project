@@ -22,11 +22,10 @@ public static void searchItem(String[] args) throws IOException {
 
          //using a for each loop to iterate over the array list
 		for (String s1 : list){
-	    	  //looking for the user variable 
+	    	  //looking for the user variable  
 	          if (s1.contains(searchTerm)){
 	        	//if it contains user variable, we print the line its on 	                
 	                System.out.println("found on this line: " + s1);   
-	        		in.close();
 
 	          }}
         System.out.println("\n\nWhat would you like to do next?");

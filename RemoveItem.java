@@ -22,22 +22,20 @@ public class RemoveItem {
 
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
 	for (int i=1; i<list.size(); i++) {
-		  String curr = list.get(i);
+		  String curr = list.get(i); 
 		  System.out.println(i + ". " + curr);
 		}
 	
 //allow the user to choose the item they want to update, set their choice as variable 'item'
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Remove (Use a Single Number):" + "\n");
-	int Item = input.nextInt(); 
-
-//	Item = Item - 1;
+	int item = input.nextInt(); 
 
 //print the item that the user chose to update
-	System.out.print("\n" + "You Chose to Remove Item Number " + (Item) + "\n" + "\n" + "Your Items.txt and Transactions.txt files have been updated!");
+	System.out.print("\n" + "You Chose to Remove Item Number " + (item) + "\n" + "\n" + "Your Items.txt and Transactions.txt files have been updated!");
 		
 	//declare string curr as the item that the user selected (full row of details)
-		String curr = list.get(Item);
+		String curr = list.get(item);
 		
 	//use split to break the string into an array, new item at every comma
 		String[] productDetails = curr.split(",");
@@ -68,7 +66,7 @@ public class RemoveItem {
 
 		
 //remove 'item' from the arraylist 'list'
-list.remove(Item);
+list.remove(item);
 
 
 //write the updated ArrayList to the items.txt file using a for loop

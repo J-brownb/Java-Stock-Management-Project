@@ -23,7 +23,7 @@ public static void update(String[] args) throws IOException {
 	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n"); 	
 	
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
-	for (int i=1; i<list.size(); i++) {
+	for (int i=1; i<list.size(); i++) { 
 		  String curr = list.get(i);
 		  System.out.println(i + ". " + curr);
 		}
@@ -31,13 +31,13 @@ public static void update(String[] args) throws IOException {
 //allow the user to choose the item they want to update, set their choice as variable 'item'
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Update (Use the Item Number):" + "\n");
-	int Item = input.nextInt(); 
+	int item = input.nextInt(); 
 	
 //print the item that the user chose to update
-	System.out.print("\n" + "You Chose to Update Item Number " + (Item) + "\n" + "\n");
+	System.out.print("\n" + "You Chose to Update Item Number " + (item) + "\n" + "\n");
 
 //declare string curr as the item that the user selected (full row of details) 
-	String curr = list.get(Item);
+	String curr = list.get(item);
 	
 //use split to break the string into an array, new item at every comma
 	String[] productDetails = curr.split(",");
@@ -57,7 +57,7 @@ List<String> productDetailsArray = Arrays.asList(productDetails);
     
 
 //ask for new stock qty, save new qty inputted by user as new variable (new qty) 
-	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (Item) + ":"+ "\n");
+	System.out.print("\n" + "Please Enter the New Qauntity for Item " + (item) + ":"+ "\n");
 	int newQty = input.nextInt();  
 	
 	
@@ -74,7 +74,7 @@ List<String> productDetailsArray = Arrays.asList(productDetails);
 
 	
 	//overwrite current arraylist item with new details inputted by user, remove square brackets on either side
-	list.set(Item, "" + (productDetail.toString().substring(1, productDetail.toString().length() - 1)));
+	list.set(item, "" + (productDetail.toString().substring(1, productDetail.toString().length() - 1)));
 	
 	//using iterator to get rid of white space
 	ListIterator<String> itr = list.listIterator();

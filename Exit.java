@@ -18,12 +18,12 @@ public static void exitSequence(String[] args) throws IOException {
 		//uses for loop to ensure that all lines of the file are captured
 		for (int i=1; i<list.size(); i++) {
 			  String curr = list.get(i);
-		
+		 
     //creating a new file called daily transaction report.txt
 File myObj2 = new File ("C:\\Users\\Jonny\\OneDrive\\Desktop\\DailyTransactionReport.txt"); 
 if (myObj2.createNewFile()) {
 	
-	//writing the data from the transactions.txt report to the file 
+	//writing the data from the transactions.txt report to the new file 
 	FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\DailyTransactionReport.txt");
 	myWriter.write("id,description,qtySold,amount,StockRemaining,transactionType"+ System.getProperty( "line.separator" ));
 	//uses for loop to ensure that all lines of the file are written 
