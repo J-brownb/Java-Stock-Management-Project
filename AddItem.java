@@ -1,14 +1,11 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Scanner; // program uses class Scanner
+import java.util.Scanner; 
 import java.io.IOException;
 public class AddItem {
-public static void newItem() {
-
-	try { 
+public static void newItem() throws IOException {
 	
-//myWriter is a constructor 
 FileWriter myWriter = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\items.txt", true);
 FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
 
@@ -21,7 +18,7 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 	}
 	s.close();
 	
-	//create the ID from size of array 
+	//create the ID from size of array  
 	int NumberofItems = list.size(); 
 	//add leading zeros 
 	String ID = String.format("%05d", NumberofItems);
@@ -52,20 +49,20 @@ System.out.print("Total Price Is: " + roundedTotalPrice + "\n");
 //Writing to the items.txt file and the transactions.txt file
 myWriter.write(ID + "," + Description + "," +  unitPrice + "," +  qtyInStock + "," +  roundedTotalPrice + System.getProperty( "line.separator" ));
 //Writing new line to trans.txt file, qty sold is 0 as just been added 
-myWriter2.write(ID + "," + Description + "," + "0" + "," + roundedTotalPrice + "," + qtyInStock + ",Created (added)" + System.getProperty( "line.separator" ));
+myWriter2.write(ID + "," + Description + "," + "0" + "," + roundedTotalPrice + "," + qtyInStock + ",Created" + System.getProperty( "line.separator" ));
 myWriter2.close();
-myWriter.close();
+myWriter.close(); 
+
+System.out.print("\n New Item Added, your Items.Txt and Transactions.Txt files have been updated \n");	
 
 
 //prompt new action from user 
 System.out.println("\nWhat Would You Like To Do Next? \n");
 Store.main(null); 
+input.close();
 
-	} catch (IOException e) {
-	System.out.println("Error");
-e.printStackTrace();
 
-}}}
+}}
 
 
 

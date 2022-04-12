@@ -13,7 +13,8 @@ public static void printReport(String[] args) throws IOException {
 
 	myReader.close();
 	
-	
+	System.out.print("\n Report Printed");	
+
 	//prompt new action from user 
 	System.out.println("\nWhat Would You Like To Do Next? \n");
 	Store.main(args); 

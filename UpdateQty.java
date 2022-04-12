@@ -15,7 +15,7 @@ public static void update(String[] args) throws IOException {
 //create an array list with each new line of the items.txt file 
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){
-	    list.add(s.nextLine());
+	    list.add(s.nextLine()); 
 	}
 	s.close();
 	
@@ -30,7 +30,7 @@ public static void update(String[] args) throws IOException {
 	 
 //allow the user to choose the item they want to update, set their choice as variable 'item'
 	Scanner input = new Scanner(System.in);
-	System.out.print("\n" + "Choose Which Item You Want To Update (Use a Single Number):" + "\n");
+	System.out.print("\n" + "Choose Which Item You Want To Update (Use the Item Number):" + "\n");
 	int Item = input.nextInt(); 
 	
 //print the item that the user chose to update
@@ -117,7 +117,7 @@ List<String> productDetailsArray = Arrays.asList(productDetails);
     	  
     	//taking ID from array list  	
      	String id = productDetail.get(0);
-     	//taking desc from array list
+     	//taking desc from array list 
      	String desc = productDetail.get(1);
      	//qty sold will be 0 as new qty is larger than oldqty
      	//amount will be 0 as no revenue is created 
@@ -132,7 +132,8 @@ List<String> productDetailsArray = Arrays.asList(productDetails);
   //prompt new action from user 
     System.out.println("\nWhat Would You Like To Do Next? \n");
     Store.main(args); 
-  	
+	input.close();
+
     	}}
     	
 

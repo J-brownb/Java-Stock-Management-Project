@@ -25,10 +25,10 @@ public static void searchItem(String[] args) throws IOException {
 	    	  //looking for the user variable 
 	          if (s1.contains(searchTerm)){
 	        	//if it contains user variable, we print the line its on 	                
-	                System.out.println("found on this line: " + s1);  
+	                System.out.println("found on this line: " + s1);   
+	        		in.close();
 
 	          }}
-		
         System.out.println("\n\nWhat would you like to do next?");
 		System.out.println("1. SEARCH AGAIN");
 		System.out.println("2. RETURN TO MAIN MENU");
@@ -47,7 +47,8 @@ public static void searchItem(String[] args) throws IOException {
 			else if (userinput == 2) {		
 				Store.main(args); 
 				System.out.print("\n Item Quantity Updated, your Items.Txt file has been updated");
-			}}}
+			}		input.close();
+}}
 
     
 

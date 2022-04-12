@@ -16,8 +16,8 @@ public class RemoveItem {
 	    list.add(s.nextLine());
 	}
 	s.close();
-	
-//print the items that are currently within the array list called 'string'
+	 
+//print the items that are currently within the array list called 'string' 
 	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n");
 
 //for loop, use increment counter to print array list line by line, variable 'curr' is the individual item 
@@ -30,6 +30,7 @@ public class RemoveItem {
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Remove (Use a Single Number):" + "\n");
 	int Item = input.nextInt(); 
+
 //	Item = Item - 1;
 
 //print the item that the user chose to update
@@ -62,7 +63,7 @@ public class RemoveItem {
 	    
 		//add new array to transactions.txt file, remove square brackets on either side
 	    FileWriter myWriter2 = new FileWriter ("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt", true);
-    	myWriter2.write( "\n" + productDetail.toString().substring(1, productDetail.toString().length() - 1 ));
+    	myWriter2.write(productDetail.toString().substring(1, productDetail.toString().length() - 1 ) + System.getProperty( "line.separator" ));
     	myWriter2.close();
 
 		
@@ -78,9 +79,8 @@ list.remove(Item);
 		  myWriter.write(curr1 + System.getProperty( "line.separator" ));
 		}
 	myWriter.close();
-    	
     	//prompt new action from user 
-    	System.out.println("\nWhat Would You Like To Do Next? \n");
+    	System.out.println("\nWhat Would You Like To Do Next? \n"); 
     	Store.main(args); 
     	
     	

@@ -7,9 +7,9 @@ public class Exit {
 public static void exitSequence(String[] args) throws IOException {
 
 	
-	//scan the items.txt file 
+	//scan the transactions.txt file  
 		Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I2P\\Assignment\\assignmentfori2p\\transactions.txt"));
-	//create an array list with each new line of the items.txt file 
+		//create an array list with each new line of the tr.txt file 
 		ArrayList<String> list = new ArrayList<String>();
 		while (s.hasNextLine()){
 		    list.add(s.nextLine());
@@ -18,10 +18,7 @@ public static void exitSequence(String[] args) throws IOException {
 		//uses for loop to ensure that all lines of the file are captured
 		for (int i=1; i<list.size(); i++) {
 			  String curr = list.get(i);
-
-
-	
-				
+		
     //creating a new file called daily transaction report.txt
 File myObj2 = new File ("C:\\Users\\Jonny\\OneDrive\\Desktop\\DailyTransactionReport.txt"); 
 if (myObj2.createNewFile()) {
@@ -52,4 +49,3 @@ if (myObj2.createNewFile()) {
 }
 }}
 }
-
