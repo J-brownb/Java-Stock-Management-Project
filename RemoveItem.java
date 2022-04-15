@@ -16,7 +16,7 @@ public class RemoveItem {
 	    list.add(s.nextLine());
 	}
 	s.close();
-	 
+		 
 //print the items that are currently within the array list called 'string' 
 	System.out.print("Here's a List of Items Currently Available:" + "\n" + "\n");
 
