@@ -1,1 +1,3 @@
 id,description,qtySold,stockRemaining,transactionType
+00009,Tangerine,0,57.75,105,Created
+00009,Tangerine,36,19.8,69,Updated

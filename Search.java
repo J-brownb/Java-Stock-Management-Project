@@ -23,11 +23,12 @@ public static void searchItem(String[] args) throws IOException {
          //using a for each loop to iterate over the array list
 		for (String s1 : list){
 	    	  //looking for the user variable  
-	          if (s1.contains(searchTerm)){
+	          if (s1.toLowerCase().contains(searchTerm.toLowerCase())){
 	        	//if it contains user variable, we print the line its on 	                
 	                System.out.println("found on this line: " + s1);   
 
 	          }}
+		
         System.out.println("\n\nWhat would you like to do next?");
 		System.out.println("1. SEARCH AGAIN");
 		System.out.println("2. RETURN TO MAIN MENU");

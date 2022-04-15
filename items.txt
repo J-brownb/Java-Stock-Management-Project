@@ -7,3 +7,4 @@ id,description,unitPrice,qtyInStock,totalPrice
 00006,Dragonfruit,3.0,10,30.0
 00007,Blueberries(Punnet),1.0,50,50.0
 00008,Cherries,0.1,20,2.0
+00009,Tangerine,0.55,69,57.75
