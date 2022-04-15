@@ -15,7 +15,7 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 	ArrayList<String> list = new ArrayList<String>();
 	while (s.hasNextLine()){
 	    list.add(s.nextLine());
-	}
+	} 
 	s.close();
 	
 	//create the ID from size of array  
@@ -28,7 +28,7 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 Scanner input = new Scanner(System.in);
 
 //Taking the Description 
-System.out.print("Enter Product Description:");
+System.out.print("Enter Product Description (Please Do NOT Include Spaces): ");
 String Description = input.nextLine();
 
 //Taking the Price Per Unit
