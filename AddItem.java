@@ -28,7 +28,7 @@ Scanner s = new Scanner(new File("C:\\Users\\Jonny\\OneDrive\\Desktop\\GitHub\\I
 Scanner input = new Scanner(System.in);
 
 //Taking the Description 
-System.out.print("Enter Product Description (Please Do NOT Include Spaces): ");
+System.out.print("Enter Product Description:");
 String Description = input.nextLine();
 
 //Taking the Price Per Unit
