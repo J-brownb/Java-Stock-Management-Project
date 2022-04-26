@@ -26,6 +26,7 @@ public class RemoveItem {
 		  System.out.println(i + ". " + curr);
 		}
 	
+	
 //allow the user to choose the item they want to update, set their choice as variable 'item'
 	Scanner input = new Scanner(System.in);
 	System.out.print("\n" + "Choose Which Item You Want To Remove (Use a Single Number):" + "\n");
